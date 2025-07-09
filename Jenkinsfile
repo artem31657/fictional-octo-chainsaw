@@ -5,10 +5,12 @@ pipeline {
 		    echo 'step Git Checkout'
 		    // Извлечение из системы контроля версий в рабочий каталог на сервере TestNode 
 		    checkout scm
-	    }
+	}
     }
     stage('Build') {
-		  echo $(cat README.md)
-	  }
+	    steps{
+		  sh "cat README.md"
+	    }
+	}
   }
 }
